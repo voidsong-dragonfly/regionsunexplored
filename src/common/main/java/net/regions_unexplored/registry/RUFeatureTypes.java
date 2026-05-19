@@ -11,7 +11,9 @@ import net.regions_unexplored.world.level.feature.bioshroom.*;
 import net.regions_unexplored.world.level.feature.configuration.*;
 import net.regions_unexplored.world.level.feature.tree.*;
 import net.regions_unexplored.world.level.feature.tree.nether.*;
+import net.regions_unexplored.worldgen.feature.CarvedLimitedPoolFeature;
 import net.regions_unexplored.worldgen.feature.NewRockFeature;
+import net.regions_unexplored.worldgen.feature.config.CarvedLimitedPoolFeatureConfig;
 import net.regions_unexplored.worldgen.feature.config.RockFeatureConfig;
 
 public interface RUFeatureTypes {
@@ -67,6 +69,7 @@ public interface RUFeatureTypes {
     Supplier<Feature<NoneFeatureConfiguration>> ROCK = register("rock", new RockFeature(NoneFeatureConfiguration.CODEC));
     Supplier<Feature<RUTreeConfiguration>> SPIRE = register("spire", new IceSpireFeature(RUTreeConfiguration.CODEC));
     Supplier<Feature<NoneFeatureConfiguration>> MARSH = register("marsh", new MarshFeature(NoneFeatureConfiguration.CODEC));
+    Supplier<Feature<CarvedLimitedPoolFeatureConfig>> CARVED_LIMITED_POOL = register("carved_limited_pool", new CarvedLimitedPoolFeature(CarvedLimitedPoolFeatureConfig.CODEC));
     Supplier<Feature<NoneFeatureConfiguration>> WATER_EDGE = register("water_edge", new WaterEdgeFeature(NoneFeatureConfiguration.CODEC));
     Supplier<Feature<NoneFeatureConfiguration>> FEN_CATTAIL = register("fen_cattail", new FenCattailFeature(NoneFeatureConfiguration.CODEC));
     Supplier<Feature<NoneFeatureConfiguration>> WATER_CATTAIL = register("water_cattail", new WaterCattailFeature(NoneFeatureConfiguration.CODEC));

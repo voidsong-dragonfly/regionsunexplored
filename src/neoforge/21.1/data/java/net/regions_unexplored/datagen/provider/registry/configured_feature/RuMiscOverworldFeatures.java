@@ -44,6 +44,7 @@ import net.regions_unexplored.world.level.feature.configuration.FallenTreeConfig
 import net.regions_unexplored.world.level.feature.configuration.LargePointedRedstoneConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.PointedRedstoneClusterConfiguration;
 import net.regions_unexplored.world.level.feature.configuration.PointedRedstoneConfiguration;
+import net.regions_unexplored.worldgen.feature.config.CarvedLimitedPoolFeatureConfig;
 import net.regions_unexplored.worldgen.feature.config.RockFeatureConfig;
 
 import java.util.List;
@@ -84,6 +85,7 @@ public class RuMiscOverworldFeatures {
     //OTHER_FEATURES
     public static final ResourceKey<ConfiguredFeature<?, ?>> MOSS_PATCH_WITH_WATER = key("moss_patch_with_water");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MARSH = key("marsh");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> CARVED_LIMITED_POOL = key("carved_limited_pool");
     public static final ResourceKey<ConfiguredFeature<?, ?>> WATER_EDGE = key("water_edge");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ICICLE_UP = key("icicle_up");
     public static final ResourceKey<ConfiguredFeature<?, ?>> MEADOW_ROCK = key("meadow_rock");
@@ -93,7 +95,7 @@ public class RuMiscOverworldFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> PATCH_NOISE_BUSH = key("patch_noise_bush");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROCK_GROUP_HIGHLAND_FIELDS = key("rock/group/highland_fields");
-    
+
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROCK_COBBLESTONE = key("rock/cobblestone");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROCK_STONE_LARGE = key("rock/stone_large");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ROCK_MOSSY_STONE_LARGE = key("rock/mossy_stone_large");
@@ -136,6 +138,7 @@ public class RuMiscOverworldFeatures {
         //OTHER_FEATURES
         register(context, MOSS_PATCH_WITH_WATER, Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE, BlockStateProvider.simple(Blocks.MOSS_BLOCK), PlacementUtils.inlinePlaced(holderGetter.getOrThrow(RuVegetationFeatures.PATCH_GRASS)), CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F));
         register(context, MARSH, RUFeatureTypes.MARSH.get(), FeatureConfiguration.NONE);
+        register(context, CARVED_LIMITED_POOL, RUFeatureTypes.CARVED_LIMITED_POOL.get(), new CarvedLimitedPoolFeatureConfig(3, ConstantInt.of(4), BlockPredicate.matchesBlocks(Blocks.MUD), BlockPredicate.matchesBlocks(Blocks.MUD), BlockStateProvider.simple(Blocks.DIRT), BlockStateProvider.simple(Blocks.GRASS_BLOCK)));
         register(context, WATER_EDGE, RUFeatureTypes.WATER_EDGE.get(), FeatureConfiguration.NONE);
         register(context, ICICLE_UP, RUFeatureTypes.ICICLE_UP.get(), FeatureConfiguration.NONE);
         register(context, MEADOW_ROCK, RUFeatureTypes.MEADOW_ROCK.get(), FeatureConfiguration.NONE);

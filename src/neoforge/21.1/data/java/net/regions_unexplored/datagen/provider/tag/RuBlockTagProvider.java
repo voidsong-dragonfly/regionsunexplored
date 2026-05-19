@@ -1035,9 +1035,9 @@ public class RuBlockTagProvider extends BlockTagsProvider {
         this.tag(RUBlockTags.SANDY_PLANT_CAN_SURVIVE_ON)
             .addTag(BlockTags.SAND)
             .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "sandstone")))
-            .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "sand")))
+            .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "slope")))
             .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "red_sand")))
-            .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "sand/red")))
+            .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "slope/red")))
             .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "red_sandstone")))
             .addOptionalTag(TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath("c", "sandstone/red")))
         ;

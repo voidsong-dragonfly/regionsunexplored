@@ -64,6 +64,7 @@ public class RuMiscOverworldPlacements {
     public static final ResourceKey<PlacedFeature> MOSS_PATCH_WITH_WATER_UNCOMMON = key("moss_patch_with_water_uncommon");
     public static final ResourceKey<PlacedFeature> MOSS_PATCH_WITH_WATER_RARE = key("moss_patch_with_water_rare");
     public static final ResourceKey<PlacedFeature> MARSH = key("marsh");
+    public static final ResourceKey<PlacedFeature> CARVED_LIMITED_POOL = key("carved_limited_pool");
     public static final ResourceKey<PlacedFeature> WATER_EDGE = key("water_edge");
     public static final ResourceKey<PlacedFeature> ICICLE_UP = key("icicle_up");
     public static final ResourceKey<PlacedFeature> MEADOW_ROCK = key("meadow_rock");
@@ -110,6 +111,7 @@ public class RuMiscOverworldPlacements {
         //OTHER_FEATURES
         final Holder<ConfiguredFeature<?, ?>>  MOSS_PATCH_WITH_WATER = getter.getOrThrow(RuMiscOverworldFeatures.MOSS_PATCH_WITH_WATER);
         final Holder<ConfiguredFeature<?, ?>>  MARSH = getter.getOrThrow(RuMiscOverworldFeatures.MARSH);
+        final Holder<ConfiguredFeature<?, ?>>  CARVED_LIMITED_POOL = getter.getOrThrow(RuMiscOverworldFeatures.CARVED_LIMITED_POOL);
         final Holder<ConfiguredFeature<?, ?>>  WATER_EDGE = getter.getOrThrow(RuMiscOverworldFeatures.WATER_EDGE);
         final Holder<ConfiguredFeature<?, ?>>  ICICLE_UP = getter.getOrThrow(RuMiscOverworldFeatures.ICICLE_UP);
         final Holder<ConfiguredFeature<?, ?>>  MEADOW_ROCK = getter.getOrThrow(RuMiscOverworldFeatures.MEADOW_ROCK);
@@ -170,6 +172,7 @@ public class RuMiscOverworldPlacements {
         register(context, RuMiscOverworldPlacements.MOSS_PATCH_WITH_WATER_UNCOMMON, MOSS_PATCH_WITH_WATER, RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
         register(context, RuMiscOverworldPlacements.MOSS_PATCH_WITH_WATER_RARE, MOSS_PATCH_WITH_WATER, RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome());
         register(context, RuMiscOverworldPlacements.MARSH, MARSH, CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, RuMiscOverworldPlacements.CARVED_LIMITED_POOL, CARVED_LIMITED_POOL, BiomeFilter.biome());
         register(context, RuMiscOverworldPlacements.WATER_EDGE, WATER_EDGE, CountPlacement.of(10), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,  BiomeFilter.biome());
         register(context, RuMiscOverworldPlacements.ICICLE_UP, ICICLE_UP, List.of(CountPlacement.of(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BlockPredicateFilter.forPredicate(RUPlacedFeatureBootstrap.onSnowPredicate), BiomeFilter.biome()));
         register(context, RuMiscOverworldPlacements.MEADOW_ROCK, MEADOW_ROCK, List.of(CountPlacement.of(1), InSquarePlacement.spread(), SurfaceWaterDepthFilter.forMaxDepth(0), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.filteredByBlockSurvival(Blocks.OAK_SAPLING), BiomeFilter.biome()));

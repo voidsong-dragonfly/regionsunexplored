@@ -29,6 +29,7 @@
   },
   "features": [
     [
+      "regions_unexplored:carved_limited_pool",
       "regions_unexplored:marsh"
     ],
     [

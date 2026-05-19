@@ -248,6 +248,10 @@ public class RUSurfaceRuleBuilder {
 
                 ifTrue(isBiome(RUBiomes.ASHEN_WOODLAND), ASHEN_DIRT),
 
+                ifTrue(isBiome(RUBiomes.MARSH),
+                    ifTrue(not(surfaceNoiseAbove(-0.675D)), MUD)
+                ), // setup for CarvedLimitedPoolFeature
+
                 ifTrue(isBiome(RUBiomes.OLD_GROWTH_BAYOU), sequence(
                         ifTrue(surfaceNoiseAbove(-0.95D), MUD),
                         ifTrue(not(yStartCheck(VerticalAnchor.absolute(64), 0)),
@@ -315,6 +319,10 @@ public class RUSurfaceRuleBuilder {
                     ifTrue(noiseAbove(RUNoises.SURFACE_MEDIUM, 2.5), block(RUBlocks.ASH)),
                     block(RUBlocks.ASHEN_DIRT))
                 ),//BA
+
+                ifTrue(isBiome(RUBiomes.MARSH),
+                    ifTrue(not(surfaceNoiseAbove(-0.675D)), MUD)
+                ), // setup for CarvedLimitedPoolFeature
 
                 ifTrue(isBiome(RUBiomes.BAYOU),
                         ifTrue(not(yStartCheck(VerticalAnchor.absolute(64), 0)), ifTrue(noiseCondition(Noises.SWAMP, 0.0D), PEAT_MUD))),
